@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="main.css" rel="stylesheet" />
+    <link href="scripture.css" rel="stylesheet" />
+    <title>Bible API Example Application</title>
+  </head>
+  <body class="index">
+    <header>
+      <div class="container">
+        <h1>
+          <a class="flex" href="/">
+            <span class="logo" title="American Bible Society">ABS</span>
+            <span>API Demo App</span>
+          </a>
+        </h1>
+      </div>
+    </header>
+    <div class="subheader">
+      <div class="container flex">
+        <div class="subheadings">
+          <h2>Viewing:</h2>
+          <h3 id="viewing"></h3>
+          <h3 id="viewing"><span id="verse"></span></h3>
+        </div>
+        <div class="search-area flex">
+          <button onclick="searchButton()">🔎</button>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="ex. 'John 3:16-19' OR 'kingdom'"
+            size="30"
+            onkeydown="if (event.keyCode == 13) searchButton()"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="container crumbs">
+      <div id="breadcrumbs"></div>
+    </div>
+    <main class="container">
+            <h4 class="list-heading"><span>Select a Verse</span></h4>
+            <div id="verse-list" class="list-container numeric-list"></div>
+            <div id="verse-content" class="verse-container"></div>
+            <div class="eb-container" id="chapter-text"></div> 
+        </main>
+    <script src="my_key.js"></script>
+    <script src="http://cdn.scripture.api.bible/fums/fumsv2.min.js"></script>
+    <script src="verse-selected.js"></script>
+    
+  </body>
+</html>
